@@ -13,7 +13,7 @@ const StartButton = ({ letter }) => {
       onMouseEnter={handleHover(true)}
       onMouseLeave={handleHover(false)}>
       <span>{letter}</span>
-      <p>{letter === 'X' ? "You Start" : "Robot Starts"}</p>
+      <p>{letter === 'X' ? "You Start" : "Minimax Starts"}</p>
     </div>
   );
 };
