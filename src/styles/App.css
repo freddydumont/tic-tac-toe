@@ -1,0 +1,15 @@
+body {
+  background-color: #282c34;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.robot {
+  width: 150px;
+  height: 150px;
+}
