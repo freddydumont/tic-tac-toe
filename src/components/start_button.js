@@ -1,31 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class StartButton extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      hover: false,
-      opposite: this.props.letter === 'X' ? 'O' : 'X'
-    };
-    this.toggleHover = this.toggleHover.bind(this);
+const StartButton = ({ letter }) => {
+
+  const opposite = letter === 'X' ? 'O' : 'X';
+
+  const toggleHover = () => {
+    // this.setState({ hover: !this.state.hover });
+    document.querySelector(`.${letter}`).classList.toggle("green");
+    document.querySelector(`.${opposite}`).classList.toggle("red");
   }
 
-  toggleHover() {
-    this.setState({ hover: !this.state.hover });
-    document.querySelector(`.${this.state.opposite}`).classList.toggle("red");
-  }
+  return (
+    <div
+      className={`start-button ${letter}`}
+      onMouseEnter={toggleHover}
+      onMouseLeave={toggleHover}>
+      <span>{letter}</span>
+      <p>{letter === 'X' ? "You Start" : "Minimax Starts"}</p>
+    </div>
+  );
+};
 
-  render() {
-    const color = this.state.hover ? "green" : '';
-
-    return (
-      <div
-        className={`start-button ${this.props.letter} ${color}`}
-        onMouseEnter={this.toggleHover}
-        onMouseLeave={this.toggleHover}>
-        <span>{this.props.letter}</span>
-        <p>{this.props.letter === 'X' ? "You Start" : "Minimax Starts"}</p>
-      </div>
-    );
-  }
-}
+export default StartButton;
