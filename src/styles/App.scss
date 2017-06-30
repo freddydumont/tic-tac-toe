@@ -64,6 +64,8 @@ body {
   padding: 10px;
   flex-shrink: 0;
 
+  cursor: pointer;
+
   span {
     font-size: 5em;
   }
@@ -72,4 +74,24 @@ body {
     font-size: 1.2em;
     font-weight: 300;
   }
+}
+
+.X {
+  p {
+    color: $green;
+  }
+}
+
+.O {
+  p {
+    color: $red;
+  }
+}
+
+.start-button:hover  {
+  color: $green;
+}
+
+.opposite {
+  color: $red;
 }
