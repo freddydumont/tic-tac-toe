@@ -10,6 +10,10 @@ $text-color: #a6b2c0;
   color: $red;
 }
 
+.green  {
+  color: $green;
+}
+
 .underline {
   text-decoration: underline;
 }
@@ -86,12 +90,4 @@ body {
   p {
     color: $red;
   }
-}
-
-.start-button:hover  {
-  color: $green;
-}
-
-.opposite {
-  color: $red;
 }

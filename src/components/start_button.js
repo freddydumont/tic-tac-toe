@@ -3,21 +3,26 @@ import React, { Component } from 'react';
 export default class StartButton extends Component {
   constructor(props) {
     super(props);
-
-    this.state = { hover: false };
+    this.state = {
+      hover: false,
+      opposite: this.props.letter === 'X' ? 'O' : 'X'
+    };
+    this.toggleHover = this.toggleHover.bind(this);
   }
 
-  handleHover = (hover) => {
-    // selector is opposite of letter
-    const selector = this.props.letter === 'X' ? 'O' : 'X';
+  toggleHover() {
+    this.setState({ hover: !this.state.hover });
+    document.querySelector(`.${this.state.opposite}`).classList.toggle("red");
   }
 
   render() {
+    const color = this.state.hover ? "green" : '';
+
     return (
       <div
-        className={"start-button " + this.props.letter}
-        onMouseEnter={this.handleHover(true)}
-        onMouseLeave={this.handleHover(false)}>
+        className={`start-button ${this.props.letter} ${color}`}
+        onMouseEnter={this.toggleHover}
+        onMouseLeave={this.toggleHover}>
         <span>{this.props.letter}</span>
         <p>{this.props.letter === 'X' ? "You Start" : "Minimax Starts"}</p>
       </div>
