@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import WelcomeMessage from './welcome_message'
+import StartButton from './start_button'
 import evilBot from '../images/evil-bot.svg';
 import '../styles/App.css';
 
@@ -10,6 +11,8 @@ class App extends Component {
         <img className="robot" src={evilBot} alt={"Evil robot face"} />
         <WelcomeMessage />
         <h1>Choose your weapon.</h1>
+        <StartButton letter='X' />
+        <StartButton letter='O' />
       </div>
     );
   }
