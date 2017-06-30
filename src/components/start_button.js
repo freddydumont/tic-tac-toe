@@ -8,6 +8,7 @@ const StartButton = ({ letter }) => {
     // this.setState({ hover: !this.state.hover });
     document.querySelector(`.${letter}`).classList.toggle("green");
     document.querySelector(`.${opposite}`).classList.toggle("red");
+    document.querySelector(`.${opposite} > p`).classList.toggle("hide");
   }
 
   return (
