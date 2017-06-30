@@ -1,21 +1,26 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const StartButton = ({ letter }) => {
+export default class StartButton extends Component {
+  constructor(props) {
+    super(props);
 
-  const handleHover = (enter) => {
-    // selector is opposite of letter
-    const selector = letter === 'X' ? 'O' : 'X';
+    this.state = { hover: false };
   }
 
-  return (
-    <div
-      className={"start-button " + letter}
-      onMouseEnter={handleHover(true)}
-      onMouseLeave={handleHover(false)}>
-      <span>{letter}</span>
-      <p>{letter === 'X' ? "You Start" : "Minimax Starts"}</p>
-    </div>
-  );
-};
+  handleHover = (hover) => {
+    // selector is opposite of letter
+    const selector = this.props.letter === 'X' ? 'O' : 'X';
+  }
 
-export default StartButton;
+  render() {
+    return (
+      <div
+        className={"start-button " + this.props.letter}
+        onMouseEnter={this.handleHover(true)}
+        onMouseLeave={this.handleHover(false)}>
+        <span>{this.props.letter}</span>
+        <p>{this.props.letter === 'X' ? "You Start" : "Minimax Starts"}</p>
+      </div>
+    );
+  }
+}
