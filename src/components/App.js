@@ -8,11 +8,13 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <img className="robot" src={evilBot} alt={"Evil robot face"} />
+        <img src={evilBot} alt={"Evil robot face"} height={150} width={150} />
         <WelcomeMessage />
         <h1>Choose your weapon.</h1>
-        <StartButton letter='X' />
-        <StartButton letter='O' />
+        <div className="buttons-container">
+          <StartButton letter='X' />
+          <StartButton letter='O' />
+        </div>
       </div>
     );
   }

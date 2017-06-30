@@ -1,7 +1,18 @@
+// Colors inspired by this theme:
+// https://marketplace.visualstudio.com/items?itemName=joshpeng.theme-onedark-sublime
+
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400');
 $red: #e06c75;
 $green: #98c378;
 $text-color: #a6b2c0;
+
+.red {
+  color: $red;
+}
+
+.underline {
+  text-decoration: underline;
+}
 
 body {
   background-color: #282c34;
@@ -10,22 +21,26 @@ body {
 }
 
 .app {
-  margin: 40px 0;
+  // height: 90vh; pushes the image outside the top
+  // find another way to center content on big screens
+  padding: 40px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+
+  img {
+    margin: 10px;
+    width: 150px;
+    height: 150px;
+  }
+
   h1 {
     font-size: 2.5em;
     font-weight: 300;
     color: $green;
   }
-}
-
-.robot {
-  width: 150px;
-  height: 150px;
 }
 
 .welcome-message {
@@ -35,10 +50,26 @@ body {
   font-size: 2em;
 }
 
-.red {
-  color: $red;
+.buttons-container {
+  min-width: 50vw;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.underline {
-  text-decoration: underline;
+.start-button {
+  min-width: 200px;
+  padding: 10px;
+  flex-shrink: 0;
+
+  span {
+    font-size: 5em;
+  }
+
+  p {
+    font-size: 1.2em;
+    font-weight: 300;
+  }
 }
