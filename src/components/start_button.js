@@ -9,12 +9,16 @@ const StartButton = ({ letter }) => {
   const toggleTextUnderO = () => {
     if (letter === 'O') {
       const O = $(`.${letter} > p`);
-      // toggle text-color
-      O.toggleClass("green");
-      // toggle text
-      O.text() === "Minimax Starts"
-      ? O.text("You Go Second")
-      : O.text("Minimax Starts");
+      // paragraph fades out
+      O.fadeToggle(250, function () {
+        // toggle text-color
+        O.toggleClass("green");
+        // toggle text
+        O.text() === "Minimax Starts" ? O.text("You Go Second")
+          : O.text("Minimax Starts");
+        //paragraph fades in
+        O.fadeToggle(250);
+      });
     }
   }
 
