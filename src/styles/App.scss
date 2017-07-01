@@ -17,11 +17,11 @@ $text-color: #a6b2c0;
  * UTILITY CLASSES
  ****************/
 .red {
-  color: $red;
+  color: $red !important;
 }
 
 .green  {
-  color: $green;
+  color: $green !important;
 }
 
 /*****************
@@ -90,7 +90,7 @@ body {
   min-width: 200px;
   padding: 10px;
   flex-shrink: 0;
-  transition: color 0.6s ease;
+  transition: color 0.5s ease;
   cursor: pointer;
 
   // inner button layout
@@ -123,5 +123,6 @@ body {
 .O {
   p {
     color: $red;
+    transition: color 0.5s ease;
   }
 }

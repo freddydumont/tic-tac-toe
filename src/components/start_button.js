@@ -6,28 +6,42 @@ const StartButton = ({ letter }) => {
 
   const opposite = letter === 'X' ? 'O' : 'X';
 
+  const toggleTextUnderO = () => {
+    if (letter === 'O') {
+      const O = $(`.${letter} > p`);
+      // toggle text-color
+      O.toggleClass("green");
+      // toggle text
+      O.text() === "Minimax Starts"
+      ? O.text("You Go Second")
+      : O.text("Minimax Starts");
+    }
+  }
+
   const toggleHover = () => {
     // selected letter turns green
     $(`.${letter}`).toggleClass("green");
     // opposite letter turns red
     $(`.${opposite}`).toggleClass("red");
+
+    toggleTextUnderO();
   }
 
   const hoverIn = () => {
     toggleHover();
     // opposite paragraph disappears
-    $(`.${opposite} > p`).fadeToggle(400, function () {
+    $(`.${opposite} > p`).fadeToggle(250, function () {
       //opposite bot appears
-      $(`.${opposite} > img`).fadeToggle();
+      $(`.${opposite} > img`).fadeToggle(250);
     });
   }
 
   const hoverOut = () => {
     toggleHover();
     //opposite bot appears
-    $(`.${opposite} > img`).fadeToggle(400, function () {
+    $(`.${opposite} > img`).fadeToggle(250, function () {
       // opposite paragraph disappears
-      $(`.${opposite} > p`).fadeToggle();
+      $(`.${opposite} > p`).fadeToggle(250);
     });
   }
 
