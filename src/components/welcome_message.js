@@ -16,7 +16,7 @@ class WelcomeMessage extends Component {
     function callSecond() {
       // eslint-disable-next-line
       const second = new Typed(".second", {
-        strings: ["I am <em><span style='color: #e06c75'>Minimax</span></em>. ^250 I <span style='text-decoration: underline'>cannot</span> be beaten."],
+        strings: ["I am <em><span style='color: #e06c75'>Minimax</span></em>. ^250 I <span style='text-decoration: underline'>cannot</span> be defeated."],
         typeSpeed: 40
       })
     }
