@@ -1,4 +1,5 @@
 import React from 'react';
+import $ from 'jquery';
 import evilBot from '../images/evil-bot.svg';
 
 const StartButton = ({ letter }) => {
@@ -7,25 +8,37 @@ const StartButton = ({ letter }) => {
 
   const toggleHover = () => {
     // selected letter turns green
-    document.querySelector(`.${letter}`).classList.toggle("green");
+    $(`.${letter}`).toggleClass("green");
     // opposite letter turns red
-    document.querySelector(`.${opposite}`).classList.toggle("red");
+    $(`.${opposite}`).toggleClass("red");
+  }
+
+  const hoverIn = () => {
+    toggleHover();
     // opposite paragraph disappears
-    document.querySelector(`.${opposite} > p`).classList.toggle("hide");
-    // evilBot appears under opposite paragraph
-    document.querySelector(`.${opposite} > img`).classList.toggle("appear");
-    // paragraph order is second
-    document.querySelector(`.${opposite} > p`).classList.toggle("order");
+    $(`.${opposite} > p`).fadeToggle(400, function () {
+      //opposite bot appears
+      $(`.${opposite} > img`).fadeToggle();
+    });
+  }
+
+  const hoverOut = () => {
+    toggleHover();
+    //opposite bot appears
+    $(`.${opposite} > img`).fadeToggle(400, function () {
+      // opposite paragraph disappears
+      $(`.${opposite} > p`).fadeToggle();
+    });
   }
 
   return (
     <div
       className={`start-button ${letter}`}
-      onMouseEnter={toggleHover}
-      onMouseLeave={toggleHover}>
+      onMouseEnter={hoverIn}
+      onMouseLeave={hoverOut}>
       <span>{letter}</span>
       <p>{letter === 'X' ? "You Start" : "Minimax Starts"}</p>
-      <img src={evilBot} alt={"Evil robot face"} height={25} width={25} />
+      <img src={evilBot} alt={"Evil robot face"} height={25} width={25} style={{ display: 'none' }} />
     </div>
   );
 };
