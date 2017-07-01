@@ -19,7 +19,15 @@ $text-color: #a6b2c0;
 }
 
 .hide {
-  visibility: hidden;
+  opacity: 0;
+}
+
+.appear {
+  opacity: 1 !important;
+}
+
+.order {
+  order: 1;
 }
 
 body {
@@ -71,8 +79,13 @@ body {
   min-width: 200px;
   padding: 10px;
   flex-shrink: 0;
-
+  transition: all 0.6s ease;
   cursor: pointer;
+
+  // for reordering p and img on hover
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   span {
     font-size: 5em;
@@ -81,6 +94,15 @@ body {
   p {
     font-size: 1.2em;
     font-weight: 300;
+    transition: opacity 0.4s ease;
+    transition: order 0.4s ease 0.2s;
+  }
+
+  img {
+    width: 3em;
+    height: 3em;
+    opacity: 0;
+    transition: all 0.4s ease 0.3s;
   }
 }
 
