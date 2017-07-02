@@ -21,6 +21,8 @@ const StartButton = ({ letter }) => {
   }
 
   const toggleHover = (isHoveredIn) => {
+    // finish all animations to avoid stacking
+    $("*:animated").finish();
     // selected letter turns green
     $(`.${letter}`).toggleClass("green");
     // opposite letter turns red
