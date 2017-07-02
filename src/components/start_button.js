@@ -22,17 +22,18 @@ const StartButton = ({ letter }) => {
     }
   }
 
-  const toggleHover = () => {
+  const toggleHover = (isHoveredIn) => {
     // selected letter turns green
     $(`.${letter}`).toggleClass("green");
     // opposite letter turns red
     $(`.${opposite}`).toggleClass("red");
 
+    isHoveredIn ? hoverIn() : hoverOut();
+
     toggleTextUnderO();
   }
 
   const hoverIn = () => {
-    toggleHover();
     // opposite paragraph disappears
     $(`.${opposite} > p`).fadeToggle(250, function () {
       //opposite bot appears
@@ -41,7 +42,6 @@ const StartButton = ({ letter }) => {
   }
 
   const hoverOut = () => {
-    toggleHover();
     //opposite bot appears
     $(`.${opposite} > img`).fadeToggle(250, function () {
       // opposite paragraph disappears
@@ -52,8 +52,8 @@ const StartButton = ({ letter }) => {
   return (
     <div
       className={`start-button ${letter}`}
-      onMouseEnter={hoverIn}
-      onMouseLeave={hoverOut}>
+      onMouseEnter={() => toggleHover(true)}
+      onMouseLeave={() => toggleHover(false)}>
       <span>{letter}</span>
       <p>{letter === 'X' ? "You Start" : "Minimax Starts"}</p>
       <img src={evilBot} alt={"Evil robot face"} height={25} width={25} style={{ display: 'none' }} />
