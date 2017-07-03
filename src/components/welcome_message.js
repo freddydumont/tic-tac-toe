@@ -18,6 +18,7 @@ class WelcomeMessage extends Component {
       const second = new Typed(".second", {
         strings: ["I am <em><span style='color: #e06c75'>Minimax</span></em>. ^250 I <span style='text-decoration: underline'>cannot</span> be defeated."],
         typeSpeed: 40
+        //onComplete, send an action that allows buttons to be rendered
       })
     }
   }
