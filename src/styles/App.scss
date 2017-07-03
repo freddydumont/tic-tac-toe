@@ -14,7 +14,7 @@ $green: #98c378;
 $text-color: #a6b2c0;
 
 /*****************
- * UTILITY CLASSES
+ * TRANSITION CLASSES
  ****************/
 .red {
   color: $red !important;
@@ -22,6 +22,15 @@ $text-color: #a6b2c0;
 
 .green  {
   color: $green !important;
+}
+
+.example-appear {
+  opacity: 0.01;
+}
+
+.example-appear.example-appear-active {
+  opacity: 1;
+  transition: opacity .5s ease-in;
 }
 
 /*****************
