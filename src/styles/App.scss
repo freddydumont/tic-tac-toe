@@ -45,6 +45,11 @@ body {
   color: $text-color;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .app {
   // height: 90vh; pushes the image outside the top
   // find another way to center content on big screens
