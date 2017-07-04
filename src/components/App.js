@@ -5,17 +5,12 @@ import evilBot from '../images/evil-bot.svg';
 import '../styles/App.css';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { ready: false };
-  }
-
   render() {
     return (
       <div className="app">
         <img src={evilBot} alt={"Evil robot face"} height={150} width={150} />
         {/*<WelcomeMessage />*/}
-        <ChooseWeapon ready={this.state.ready} />
+        <ChooseWeapon />
       </div>
     );
   }
