@@ -4,8 +4,9 @@ import StartButton from './start_button';
 import { connect } from 'react-redux';
 import { chooseSymbol } from '../actions';
 
-// dispatch comes from connect and is used within the component
-// to dispatch actions
+// dispatch comes from connect and is used within the component to dispatch actions
+// there is no container because the component is not modified by state
+// it is directly connected to the store to allow onClick to dispatch an action
 let ChooseWeapon = ({ dispatch }) => {
   return (
     <div>
