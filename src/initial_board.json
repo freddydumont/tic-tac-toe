@@ -1,0 +1,40 @@
+{
+  "board": [
+    {
+      "id": "top-left",
+      "value": ""
+    },
+    {
+      "id": "top-center",
+      "value": ""
+    },
+    {
+      "id": "top-right",
+      "value": ""
+    },
+    {
+      "id": "middle-left",
+      "value": ""
+    },
+    {
+      "id": "middle-center",
+      "value": ""
+    },
+    {
+      "id": "middle-right",
+      "value": ""
+    },
+    {
+      "id": "bottom-left",
+      "value": ""
+    },
+    {
+      "id": "bottom-center",
+      "value": ""
+    },
+    {
+      "id": "bottom-right",
+      "value": ""
+    }
+  ]
+}

@@ -7,8 +7,9 @@ import 'normalize.css';
 import App from './components/App';
 import Game from './components/game';
 import playerSymbol from './reducers';
+import initialBoard from './initial_board.json'
 
-let store = createStore(playerSymbol);
+let store = createStore(playerSymbol, initialBoard);
 // testing
 console.log(store.getState());
 
