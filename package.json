@@ -9,8 +9,10 @@
     "npm-run-all": "^4.0.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",
     "react-transition-group": "^1.2.0",
+    "redux": "^3.7.1",
     "typed.js": "^2.0.1"
   },
   "devDependencies": {

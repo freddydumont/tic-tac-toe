@@ -14,8 +14,7 @@ class App extends Component {
     return (
       <div className="app">
         <img src={evilBot} alt={"Evil robot face"} height={150} width={150} />
-        <WelcomeMessage />
-        {/* below should only be rendered when welcomeMessage is completed */}
+        {/*<WelcomeMessage />*/}
         <ChooseWeapon ready={this.state.ready} />
       </div>
     );
