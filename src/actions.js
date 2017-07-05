@@ -9,7 +9,8 @@ export function setPiece(opponent_piece) {
       // because it's from the current player's perspective.
       // Since the the API is only responsible for the bot's turns, bot is the player
       player_piece: opponent_piece === 'x' ? 'o' : 'x',
-      opponent_piece
+      opponent_piece,
+      isPlayerTurn: opponent_piece === 'x' ? false : true
     }
   }
 }
