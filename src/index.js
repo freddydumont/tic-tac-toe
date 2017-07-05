@@ -5,7 +5,7 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import 'normalize.css';
 import App from './components/App';
-import Game from './components/game';
+import Game from './containers/game';
 import playerSymbol from './reducers';
 import initialBoard from './initial_board.json'
 
