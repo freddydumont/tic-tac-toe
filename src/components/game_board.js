@@ -1,7 +1,5 @@
 import React from 'react';
 
-// letter === 'X' ? String.fromCharCode(215) : String.fromCharCode(9675)
-
 const GameBoard = ({ board }) => {
   // create component from board that was received
 

@@ -1,14 +1,16 @@
-import { CHOOSE_SYMBOL } from './actions';
+import { SET_PLAYER_PIECE } from './actions';
 
-export default function playerSymbol(state, action) {
+export default function setInitialGameState(state, action) {
   switch (action.type) {
-    case CHOOSE_SYMBOL:
+    case SET_PLAYER_PIECE:
       return {
         ...state,
-        playerSymbol: action.playerSymbol,
-        isPlayerTurn: action.playerSymbol === 'X' ? true : false
+        data: {
+          ...state.data,
+          player_piece: action.payload.player_piece,
+          opponent_piece: action.payload.opponent_piece
+        }
       }
-
     default:
       return state;
   }
