@@ -10,7 +10,24 @@ const GameBoard = ({ board }) => {
   // values 3 4 5 are the second row
   // values 6 7 8 are the third row
 
-  return <div>test</div>
+  // row is an array of 3 objects
+  // map extracts the id and the value from each object
+  // and creates a cell out of each
+  const Row = ({ row }) => (
+    <div className="row">
+      {row.map(cell => (
+        <div className="cell" key={cell.id}>{cell.id}</div>
+      ))}
+    </div>
+  );
+
+  return (
+    <div className="board">
+      <Row row={board.slice(0, 3)} />
+      <Row row={board.slice(3, 6)} />
+      <Row row={board.slice(6)} />
+    </div>
+  );
 }
 
 export default GameBoard;

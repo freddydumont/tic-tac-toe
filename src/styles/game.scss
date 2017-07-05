@@ -1,0 +1,13 @@
+.board {
+  display: table;
+}
+
+.row {
+  display: table-row;
+}
+
+.cell {
+  display: table-cell;
+  border: 2px solid #fff;
+  border-collapse: collapse;
+}
