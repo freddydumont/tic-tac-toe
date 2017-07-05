@@ -16,7 +16,7 @@ const GameBoard = ({ board }) => {
   const Row = ({ row }) => (
     <div className="row">
       {row.map(cell => (
-        <div className="cell" key={cell.id}>{cell.id}</div>
+        <div className="cell" id={cell.id} key={cell.id}>{cell.id}</div>
       ))}
     </div>
   );

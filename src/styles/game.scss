@@ -1,13 +1,43 @@
+$border: 2px solid #fff;
+
+#root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .board {
   display: table;
+  width: 300px;
+  table-layout: fixed;
 }
 
 .row {
   display: table-row;
+  height: 100px;
 }
 
 .cell {
   display: table-cell;
-  border: 2px solid #fff;
-  border-collapse: collapse;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#top-left, #top-center, #middle-left, #middle-center {
+  border-right: $border;
+  border-bottom: $border;
+}
+
+#top-right, #middle-right {
+  border-bottom: $border;
+}
+
+#bottom-center {
+  border-right: $border;
+}
+
+#bottom-left {
+  border-right: $border;
 }
