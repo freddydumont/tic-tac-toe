@@ -16,7 +16,10 @@ const GameBoard = ({ board }) => {
   const Row = ({ row }) => (
     <div className="row">
       {row.map(cell => (
-        <div className="cell" id={cell.id} key={cell.id}>{cell.id}</div>
+        <div className="cell" id={cell.id} key={cell.id}>
+          {cell.value === 'x' ? String.fromCharCode(215) :
+            cell.value === 'o' ? String.fromCharCode(9675) : cell.value}
+        </div>
       ))}
     </div>
   );
