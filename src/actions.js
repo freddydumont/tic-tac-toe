@@ -19,9 +19,7 @@ export function setPiece(opponent_piece) {
 }
 
 export function sendRequest(data) {
-  // works with cors-everywhere, doesnt otherwise
-  // maybe related to origin being localhost
-  // try without in production build
+  // have to use a proxy server because api doesnt seem to support CORS
   const url = 'https://cors-everywhere.herokuapp.com/http://perfecttictactoe.herokuapp.com/api/v2/play';
   const request = axios.post(url, data, {});
 

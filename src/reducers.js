@@ -10,9 +10,12 @@ function data(state = {}, action) {
         opponent_piece: action.payload.opponent_piece
       }
     case SEND_REQUEST:
-      console.log(action.payload.request);
-      // deal with response here
-      return state;
+      // deal with errors here at some point
+      let response = JSON.parse(action.payload.request.response);
+      return {
+        ...state,
+        board: response.data.board
+      }
     default:
       return state;
   }
@@ -22,6 +25,9 @@ function isPlayerTurn(state = null, action) {
   switch (action.type) {
     case SET_PLAYER_PIECE:
       return (action.payload.isPlayerTurn);
+    case SEND_REQUEST:
+      // after request is completed, reverse isPlayerTurn
+      return (!state);
     default:
       return state;
   }
