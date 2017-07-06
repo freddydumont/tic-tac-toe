@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { SET_PLAYER_PIECE, SEND_REQUEST } from './actions';
+import { SET_PLAYER_PIECE, SEND_REQUEST, USER_TURN } from './actions';
 
 function data(state = {}, action) {
   switch (action.type) {
@@ -16,6 +16,12 @@ function data(state = {}, action) {
         ...state,
         board: response.data.board
       }
+    case USER_TURN:
+      // update store with new board received from component
+      return {
+        ...state,
+        board: action.payload
+      }
     default:
       return state;
   }
@@ -26,7 +32,9 @@ function isPlayerTurn(state = null, action) {
     case SET_PLAYER_PIECE:
       return (action.payload.isPlayerTurn);
     case SEND_REQUEST:
+    case USER_TURN:
       // after request is completed, reverse isPlayerTurn
+      // same after user has played his turn
       return (!state);
     default:
       return state;

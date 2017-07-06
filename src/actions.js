@@ -2,6 +2,7 @@ import axios from 'axios';
 
 export const SET_PLAYER_PIECE = 'SET_PLAYER_PIECE';
 export const SEND_REQUEST = 'SEND_REQUEST';
+export const USER_TURN = 'USER_TURN';
 
 export function setPiece(opponent_piece) {
   return {
@@ -26,5 +27,12 @@ export function sendRequest(data) {
   return {
     type: SEND_REQUEST,
     payload: request
+  }
+}
+
+export function playTurn(id) {
+  return {
+    type: USER_TURN,
+    payload: id
   }
 }
