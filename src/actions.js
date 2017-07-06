@@ -1,4 +1,7 @@
+import axios from 'axios';
+
 export const SET_PLAYER_PIECE = 'SET_PLAYER_PIECE';
+export const SEND_REQUEST = 'SEND_REQUEST';
 
 export function setPiece(opponent_piece) {
   return {
@@ -12,5 +15,15 @@ export function setPiece(opponent_piece) {
       opponent_piece,
       isPlayerTurn: opponent_piece === 'x' ? false : true
     }
+  }
+}
+
+export function sendRequest(data) {
+  const url = 'http://perfecttictactoe.herokuapp.com/api/v2/play';
+  const request = axios.post(url, data);
+
+  return {
+    type: SEND_REQUEST,
+    payload: request
   }
 }
