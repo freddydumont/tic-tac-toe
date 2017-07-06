@@ -19,8 +19,11 @@ export function setPiece(opponent_piece) {
 }
 
 export function sendRequest(data) {
-  const url = 'http://perfecttictactoe.herokuapp.com/api/v2/play';
-  const request = axios.post(url, data);
+  // works with cors-everywhere, doesnt otherwise
+  // maybe related to origin being localhost
+  // try without in production build
+  const url = 'https://cors-everywhere.herokuapp.com/http://perfecttictactoe.herokuapp.com/api/v2/play';
+  const request = axios.post(url, data, {});
 
   return {
     type: SEND_REQUEST,

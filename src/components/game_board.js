@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 class GameBoard extends Component {
   componentDidMount() {
     if (this.props.isPlayerTurn) {
+      console.log("state after request", this.props)
       // convert data to JSON
       this.props.onComponentMount(JSON.stringify(this.props.data));
       // create reducer to take care of response
@@ -10,6 +11,7 @@ class GameBoard extends Component {
   }
 
   render() {
+    console.log("state passed to GameBoard", this.props)
     // row is an array of 3 objects
     // map extracts the id and the value from each object and creates a cell out of each
     const Row = ({ row }) => (

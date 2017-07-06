@@ -9,14 +9,14 @@ import 'normalize.css';
 // internal imports
 import App from './components/App';
 import Game from './containers/game';
-import setInitialGameState from './reducers';
+import reducer from './reducers';
 import initialBoard from './initial_board.json';
 
 const initialData = { data: initialBoard };
 
-let store = createStore(setInitialGameState, initialData, applyMiddleware(ReduxPromise));
+let store = createStore(reducer, initialData, applyMiddleware(ReduxPromise));
 // testing
-console.log(store.getState());
+console.log("store after createStore is", store.getState());
 
 ReactDOM.render(
   <Provider store={store}>
