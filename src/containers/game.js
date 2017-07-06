@@ -5,7 +5,8 @@ import { sendRequest } from '../actions';
 // get state from store and pass it to component
 const mapStateToProps = state => {
   return {
-    board: state.data.board
+    isPlayerTurn: state.isPlayerTurn,
+    data: state.data
   }
 }
 
