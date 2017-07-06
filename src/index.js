@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import ReduxPromise from 'redux-promise';
 import 'normalize.css';
@@ -13,8 +13,8 @@ import reducer from './reducers';
 import initialBoard from './initial_board.json';
 
 const initialData = { data: initialBoard };
-
-let store = createStore(reducer, initialData, applyMiddleware(ReduxPromise));
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+let store = createStore(reducer, initialData, composeEnhancers(applyMiddleware(ReduxPromise)));
 // testing
 console.log("store after createStore is", store.getState());
 
