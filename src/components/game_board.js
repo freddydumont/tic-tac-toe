@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Row from '../containers/row';
 
 class GameBoard extends Component {
   componentDidMount() {
@@ -19,38 +20,15 @@ class GameBoard extends Component {
   }
 
   render() {
-    // row is an array of 3 objects
-    // map extracts the id and the value from each object and creates a cell out of each
-    const Row = ({ row }) => (
-      <div className="row">
-        {row.map(cell => (
-          <div
-            className="cell"
-            id={cell.id}
-            key={cell.id}
-            onClick={() => {
-              // an action is dispatched only when it's the user's turn
-              // and cell.value is empty
-              if (!this.props.isPlayerTurn && cell.value === '') {
-                cell.value = this.props.data.opponent_piece;
-                this.props.onCellClick(this.props.data.board);
-              }
-            }}>
-            {cell.value === 'x' ? String.fromCharCode(215) :
-              cell.value === 'o' ? String.fromCharCode(9675) : cell.value}
-          </div>
-        ))}
-      </div>
-    );
     // board is an array of 9 values
     // values 0 1 2 are the first row
     // values 3 4 5 are the second row
     // values 6 7 8 are the third row
     return (
       <div className="board">
-        <Row row={this.props.data.board.slice(0, 3)} />
-        <Row row={this.props.data.board.slice(3, 6)} />
-        <Row row={this.props.data.board.slice(6)} />
+        <Row row={this.props.data.board.slice(0, 3)} startingKey={0} />
+        <Row row={this.props.data.board.slice(3, 6)} startingKey={3} />
+        <Row row={this.props.data.board.slice(6)} startingKey={6} />
       </div>
     );
   }

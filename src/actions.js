@@ -3,6 +3,13 @@ import axios from 'axios';
 export const SET_PLAYER_PIECE = 'SET_PLAYER_PIECE';
 export const SEND_REQUEST = 'SEND_REQUEST';
 export const USER_TURN = 'USER_TURN';
+export const RESET_STATE = 'RESET_STATE';
+
+export function resetState() {
+  return {
+    type: RESET_STATE
+  }
+}
 
 export function setPiece(opponent_piece) {
   return {
@@ -30,9 +37,9 @@ export function sendRequest(data) {
   }
 }
 
-export function playTurn(id) {
+export function playTurn(i) {
   return {
     type: USER_TURN,
-    payload: id
+    payload: i
   }
 }

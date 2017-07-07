@@ -10,11 +10,9 @@ import 'normalize.css';
 import App from './components/App';
 import Game from './containers/game';
 import reducer from './reducers';
-import initialBoard from './initial_board.json';
 
-const initialData = { data: initialBoard };
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-let store = createStore(reducer, initialData, composeEnhancers(applyMiddleware(ReduxPromise)));
+let store = createStore(reducer, composeEnhancers(applyMiddleware(ReduxPromise)));
 // testing
 console.log("store after createStore is", store.getState());
 
