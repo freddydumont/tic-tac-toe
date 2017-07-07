@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { SET_PLAYER_PIECE, SEND_REQUEST, USER_TURN, RESET_STATE } from './actions';
+import { SET_PLAYER_PIECE, SEND_REQUEST, USER_TURN, RESET_STATE, GAME_OVER } from './actions';
 // initiate here to work with RESET_STATE
 import initialBoard from './initial_board.json';
 
@@ -47,10 +47,18 @@ function isPlayerTurn(state = null, action) {
     case SET_PLAYER_PIECE:
       return (action.payload.isPlayerTurn);
     case SEND_REQUEST:
+      // if the game status is draw or win, return null
+      // to prevent user from being able to click cells
+      let response = JSON.parse(action.payload.request.response);
+      let status = response.data.status;
+      if (status === "win" || status === "draw") {
+        return null;
+      }
+      // otherwise switch turn
+      return !state;
     case USER_TURN:
-      // after request is completed, reverse isPlayerTurn
-      // same after user has played his turn
-      return (!state);
+      // after user has played his turn, reverse isPlayerTurn
+      return !state;
     default:
       return state;
   }

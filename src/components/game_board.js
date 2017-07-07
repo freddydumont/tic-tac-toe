@@ -11,19 +11,6 @@ class GameBoard extends Component {
   }
 
   componentDidUpdate() {
-    // detect win here
-    // this.props.data.status
-    // if status is win {if winner is x / is winner is o}
-    if (this.props.data.status === "win") {
-      this.props.data.winner === 'x' ? console.log("x is the winner") : console.log("o is the winner")
-    }
-    // if status is draw
-    if (this.props.data.status === "draw") {
-      console.log("this is a draw")
-      // dispatch action
-      // GAME_OVER
-      // switch isPlayerTurn to null to avoid clicking on stuff
-    }
     // play minimax turn when component updates (user has played a turn)
     if (this.props.isPlayerTurn) {
       this.props.onComponentMount(JSON.stringify(this.props.data));

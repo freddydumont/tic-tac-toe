@@ -11,7 +11,7 @@ let GameRow = ({ row, startingKey, onCellClick, isPlayerTurn }) => (
         key={startingKey + i}
         onClick={() => {
           // an action is dispatched only when it's the user's turn and cell is empty
-          if (!isPlayerTurn && cell.value === '') {
+          if (isPlayerTurn === false && cell.value === '') {
             // sending index of board array to reducer
             onCellClick(startingKey + i);
           }
