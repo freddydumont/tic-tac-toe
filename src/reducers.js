@@ -16,7 +16,9 @@ function data(state = initialBoard, action) {
       let response = JSON.parse(action.payload.request.response);
       return {
         ...state,
-        board: response.data.board
+        board: response.data.board,
+        status: response.data.status,
+        winner: response.data.winner
       }
     case USER_TURN:
       // http://redux.js.org/docs/recipes/reducers/ImmutableUpdatePatterns.html

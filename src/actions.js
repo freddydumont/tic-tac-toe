@@ -4,6 +4,13 @@ export const SET_PLAYER_PIECE = 'SET_PLAYER_PIECE';
 export const SEND_REQUEST = 'SEND_REQUEST';
 export const USER_TURN = 'USER_TURN';
 export const RESET_STATE = 'RESET_STATE';
+export const GAME_OVER = 'GAME_OVER';
+
+export function endGame() {
+  return {
+    type: GAME_OVER
+  }
+}
 
 export function resetState() {
   return {
