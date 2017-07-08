@@ -9,7 +9,7 @@ import { setPiece } from '../actions';
 // it is directly connected to the store to allow onClick to dispatch an action
 let ChooseWeapon = ({ dispatch }) => {
   return (
-    <div>
+    <div className="choose-weapon">
       <h1>Choose your weapon.</h1>
       <div className="buttons-container">
         <Link to="/game" onClick={() => dispatch(setPiece('x'))}>
