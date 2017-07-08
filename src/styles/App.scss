@@ -94,12 +94,13 @@ a {
 
 .buttons-container {
   min-width: 50vw;
+  min-height: 200px;
   padding: 10px;
   // button row layout
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .start-button {
@@ -117,6 +118,7 @@ a {
 
   span {
     font-size: 5em;
+    margin-bottom: 8px;
   }
 
   p {
