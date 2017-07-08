@@ -1,4 +1,4 @@
-$border: 2px solid #fff;
+$border: 2px solid #a6b2c0;
 
 #root {
   height: 100vh;
@@ -10,8 +10,11 @@ $border: 2px solid #fff;
 
 .board {
   display: table;
+  margin: 10px;
   width: 300px;
   table-layout: fixed;
+  user-select: none;
+  cursor: default;
 }
 
 .row {
