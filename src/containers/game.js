@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import GameBoard from '../components/game_board';
-import { sendRequest } from '../actions';
+import { sendRequest, playTurn } from '../actions';
 
 // get state from store and pass it to component
 const mapStateToProps = state => {
@@ -15,6 +15,9 @@ const mapDispatchToProps = dispatch => {
   return {
     onComponentMount: data => {
       dispatch(sendRequest(data));
+    },
+    onCellClick: i => {
+      dispatch(playTurn(i));
     }
   }
 }
