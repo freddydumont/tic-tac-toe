@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Row from '../components/row';
 
-class GameBoard extends Component {
+class Board extends Component {
   componentDidMount() {
     // play minimax turn on initialMount if it's his turn
     // see actions.js for an explanation on why playerTurn refers to the AI's turn
@@ -35,4 +35,4 @@ class GameBoard extends Component {
   }
 }
 
-export default GameBoard;
+export default Board;

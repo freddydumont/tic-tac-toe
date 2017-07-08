@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import GameBoard from '../components/game_board';
+import Board from '../components/board';
 import { sendRequest, playTurn } from '../actions';
 
 // get state from store and pass it to component
@@ -22,6 +22,6 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-const Game = connect(mapStateToProps, mapDispatchToProps)(GameBoard)
+const GameBoard = connect(mapStateToProps, mapDispatchToProps)(Board)
 
-export default Game;
+export default GameBoard;

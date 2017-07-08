@@ -8,7 +8,7 @@ import ReduxPromise from 'redux-promise';
 import 'normalize.css';
 // internal imports
 import App from './components/App';
-import Game from './containers/game';
+import Game from './components/game';
 import reducer from './reducers';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
