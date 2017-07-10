@@ -64,11 +64,30 @@ function isPlayerTurn(state = null, action) {
   }
 }
 
+// save initial game state to reset game when user plays again
+function initialGameState(state = null, action) {
+  switch (action.type) {
+    case SET_PLAYER_PIECE:
+      // action contains player_piece, opponent_piece and isPlayerTurn
+      // only need to add initial board
+      return {
+        isPlayerTurn: action.payload.isPlayerTurn,
+        data: {
+          opponent_piece: action.payload.opponent_piece,
+          player_piece: action.payload.player_piece,
+          board: initialBoard.board
+        }
+      }
+    default:
+      return state;
+  }
+}
+
 // https://stackoverflow.com/questions/35622588/
 // how-to-reset-the-state-of-a-redux-store
 
 // combine top-level reducers
-const appReducer = combineReducers({ data, isPlayerTurn });
+const appReducer = combineReducers({ data, isPlayerTurn, initialGameState });
 // write a new rootReducer wrapping appReducer
 const rootReducer = (state, action) => {
   if (action.type === RESET_STATE) {
