@@ -6,19 +6,20 @@ import evilBot from '../images/evil-bot.svg';
 class Minimax extends Component {
   constructor(props) {
     super(props);
-    this.winStrings = ["Hahaha! I have won!", "You lose again, human.",
+    this.winStrings = ["Hahaha!^200 I have won!", "I like this game!",
       "I am invincible!!!", "Child's play."];
 
-    this.drawStrings = ["You are lucky, for now.",
-      "One mistake, and you shall fall.", "A temporary relief. Your end is unavoidable."];
+    this.drawStrings = ["You are lucky...^200 for now.",
+      "Is this the best you can do?", "A temporary relief.^200 Your end is unavoidable."];
 
-    this.startingStrings = ["Tic Tac Toe is my jam.", "Beating humans is my thing.", "Warning! I am good at this."]
+    this.startingStrings = ["Tic Tac Toe is my jam.", "Beating humans is my thing.", "Warning!^200 I am good at this."]
 
     this.errorString = ["I AM ERROR"];
   }
 
   typeStrings(str, length) {
     let arr = [str[Math.floor(Math.random() * length)]]
+    // eslint-disable-next-line
     let typed = new Typed(".message", {
       strings: arr,
       typeSpeed: 40,
@@ -55,8 +56,7 @@ class Minimax extends Component {
   }
 }
 
-// mapping state here to avoid creating a container for a single
-// piece of state
+// mapping state here to avoid creating a container for a single piece of state
 const mapStateToProps = state => {
   return {
     status: state.data.status
