@@ -79,3 +79,47 @@ $border: 2px solid #a6b2c0;
 #bottom-left {
   border-right: $border;
 }
+
+.play-again {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    cursor: pointer;
+    user-select: none;
+    margin: 15px;
+  }
+}
+
+.choice {
+  width: 200px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 250px;
+  border: none;
+  background: #282c34;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+}
