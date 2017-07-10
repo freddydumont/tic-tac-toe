@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Typed from 'typed.js';
 import evilBot from '../images/evil-bot.svg';
 
@@ -27,7 +28,7 @@ class Minimax extends Component {
 
   componentDidUpdate() {
     // if status is win type win strings
-
+    console.log(this.props.status);
     // if status is draw, type draw strings
   }
 
@@ -42,5 +43,15 @@ class Minimax extends Component {
     );
   }
 }
+
+// mapping state here to avoid creating a container for a single
+// piece of state
+const mapStateToProps = state => {
+  return {
+    status: state.data.status
+  }
+}
+
+Minimax = connect(mapStateToProps)(Minimax);
 
 export default Minimax;
