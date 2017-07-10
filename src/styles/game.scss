@@ -17,9 +17,8 @@ $border: 2px solid #a6b2c0;
   align-items: flex-start;
 
   img {
+    align-self: center;
     margin: 10px;
-    // width: 125px;
-    // height: 125px;
     width: 15vw;
     max-width: 125px;
   }
@@ -35,13 +34,11 @@ $border: 2px solid #a6b2c0;
 
   p {
     margin-left: 15px;
+    margin-right: 15px;
     text-transform: uppercase;
     font-family: Courier New, Courier, monospace;
     font-size: 1.25em;
     font-weight: 500;
-    // position: relative;
-    // top: 50%;
-    // transform: translateY(-50%);
   }
 }
 
