@@ -11,15 +11,13 @@ const PlayAgain = ({ status }) => {
       className="content"
       overlayClassName="overlay"
       contentLabel={"Play Again"}>
-      <div className="play-again">
-        <h1 style={{ color: this.gameStatus ? '#e06c75' : '#98c378' }}>
-          {this.gameStatus ? 'You Lose' : 'Draw'}
-        </h1>
-        <h2>Play Again?</h2>
-        <div className="choice">
-          <p>YES</p>
-          <p>NO</p>
-        </div>
+      <h1 style={{ color: this.gameStatus ? '#e06c75' : '#98c378' }}>
+        {this.gameStatus ? 'You Lose' : 'Draw'}
+      </h1>
+      <h2>Play Again?</h2>
+      <div className="choice">
+        <h3>YES</h3>
+        <h3>NO</h3>
       </div>
     </ReactModal>
   );
