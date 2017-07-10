@@ -17,19 +17,30 @@ class Minimax extends Component {
     this.errorString = ["I AM ERROR"];
   }
 
-  componentDidMount() {
-    let arr = [this.startingStrings[Math.floor(Math.random() * 3)]]
-    const typed = new Typed(".message", {
+  typeStrings(str, length) {
+    let arr = [str[Math.floor(Math.random() * length)]]
+    let typed = new Typed(".message", {
       strings: arr,
-      typeSpeed: 50,
+      typeSpeed: 40,
       showCursor: false
     });
   }
 
+  componentDidMount() {
+    this.typeStrings(this.startingStrings, this.startingStrings.length);
+  }
+
   componentDidUpdate() {
     // if status is win type win strings
-    console.log(this.props.status);
+    if (this.props.status === "win") {
+      document.querySelector(".message").innerHTML = '';
+      this.typeStrings(this.winStrings, this.winStrings.length);
+    }
     // if status is draw, type draw strings
+    if (this.props.status === "draw") {
+      document.querySelector(".message").innerHTML = '';
+      this.typeStrings(this.drawStrings, this.drawStrings.length);
+    }
   }
 
   render() {
