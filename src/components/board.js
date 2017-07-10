@@ -17,6 +17,18 @@ class Board extends Component {
     }
   }
 
+  createRows() {
+    let rows = [];
+    for (let i = 0; i < 7; i += 3) {
+      rows.push(
+        <Row row={this.props.data.board.slice(i, i + 3)} key={i} startingKey={i}
+          isPlayerTurn={this.props.isPlayerTurn} onCellClick={this.props.onCellClick}
+          opponentPiece={this.props.data.opponent_piece} />
+      );
+    }
+    return rows;
+  }
+
   render() {
     // board is an array of 9 values
     // values 0 1 2 are the first row
@@ -24,15 +36,7 @@ class Board extends Component {
     // values 6 7 8 are the third row
     return (
       <div className="board">
-        <Row row={this.props.data.board.slice(0, 3)} startingKey={0}
-          isPlayerTurn={this.props.isPlayerTurn} onCellClick={this.props.onCellClick}
-          opponentPiece={this.props.data.opponent_piece} />
-        <Row row={this.props.data.board.slice(3, 6)} startingKey={3}
-          isPlayerTurn={this.props.isPlayerTurn} onCellClick={this.props.onCellClick}
-          opponentPiece={this.props.data.opponent_piece} />
-        <Row row={this.props.data.board.slice(6)} startingKey={6}
-          isPlayerTurn={this.props.isPlayerTurn} onCellClick={this.props.onCellClick}
-          opponentPiece={this.props.data.opponent_piece} />
+        {this.createRows()}
       </div>
     );
   }
