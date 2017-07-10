@@ -2,11 +2,12 @@ import React from 'react';
 
 // row is an array of 3 objects
 // map extracts the id and the value from each object and creates a cell out of each
-let Row = ({ row, startingKey, onCellClick, isPlayerTurn }) => (
+let Row = ({ row, startingKey, onCellClick, isPlayerTurn, opponentPiece }) => (
   <div className="row">
     {row.map((cell, i) => (
       <div
         className="cell"
+        style={cell.value === opponentPiece ? { color: '#98c378' } : { color: '#e06c75' }}
         id={cell.id}
         key={startingKey + i}
         onClick={() => {

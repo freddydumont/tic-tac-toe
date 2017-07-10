@@ -25,11 +25,14 @@ class Board extends Component {
     return (
       <div className="board">
         <Row row={this.props.data.board.slice(0, 3)} startingKey={0}
-          isPlayerTurn={this.props.isPlayerTurn} onCellClick={this.props.onCellClick} />
+          isPlayerTurn={this.props.isPlayerTurn} onCellClick={this.props.onCellClick}
+          opponentPiece={this.props.data.opponent_piece} />
         <Row row={this.props.data.board.slice(3, 6)} startingKey={3}
-          isPlayerTurn={this.props.isPlayerTurn} onCellClick={this.props.onCellClick} />
+          isPlayerTurn={this.props.isPlayerTurn} onCellClick={this.props.onCellClick}
+          opponentPiece={this.props.data.opponent_piece} />
         <Row row={this.props.data.board.slice(6)} startingKey={6}
-          isPlayerTurn={this.props.isPlayerTurn} onCellClick={this.props.onCellClick} />
+          isPlayerTurn={this.props.isPlayerTurn} onCellClick={this.props.onCellClick}
+          opponentPiece={this.props.data.opponent_piece} />
       </div>
     );
   }
