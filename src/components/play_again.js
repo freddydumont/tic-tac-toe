@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactModal from 'react-modal';
+import { Link } from 'react-router-dom';
 
 const PlayAgain = ({ status, openModal }) => {
   // save status as boolean
@@ -17,7 +18,7 @@ const PlayAgain = ({ status, openModal }) => {
       <h2>Play Again?</h2>
       <div className="choice">
         <h3>YES</h3>
-        <h3>NO</h3>
+        <Link to="/"><h3>NO</h3></Link>
       </div>
     </ReactModal>
   );
