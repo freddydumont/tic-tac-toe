@@ -125,6 +125,11 @@ $border: 2px solid #a6b2c0;
     user-select: none;
     margin: 15px;
     margin-top: 20px;
+    margin-left: 0;
+
+    span {
+      transition: opacity 100ms ease;
+    }
   }
 
   position: absolute;

@@ -22,8 +22,16 @@ $text-color: #a6b2c0;
   color: $red !important;
 }
 
-.green  {
+.green {
   color: $green !important;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.show {
+  opacity: 1;
 }
 
 .example-appear {
