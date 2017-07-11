@@ -5,10 +5,18 @@ export const SEND_REQUEST = 'SEND_REQUEST';
 export const USER_TURN = 'USER_TURN';
 export const RESET_STATE = 'RESET_STATE';
 export const GAME_OVER = 'GAME_OVER';
+export const RESET_GAME = 'RESET_GAME';
 
 export function endGame() {
   return {
     type: GAME_OVER
+  }
+}
+
+export function resetGame(initialGameState) {
+  return {
+    type: RESET_GAME,
+    payload: initialGameState
   }
 }
 

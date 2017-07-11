@@ -1,26 +1,21 @@
 import { connect } from 'react-redux';
 import PlayAgain from '../components/play_again';
+import { resetGame } from '../actions';
 
-// get state from store and pass it to component
 const mapStateToProps = state => {
   return {
     status: state.data.status,
-    openModal: state.openModal
+    openModal: state.openModal,
+    initialGameState: state.initialGameState
   }
 }
 
-// pass sendRequest to component
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     onComponentMount: data => {
-//       dispatch(sendRequest(data));
-//     },
-//     onCellClick: i => {
-//       dispatch(playTurn(i));
-//     }
-//   }
-// }
+const mapDispatchToProps = dispatch => {
+  return {
+    resetGame: initialGameState => dispatch(resetGame(initialGameState))
+  }
+}
 
-const Modal = connect(mapStateToProps)(PlayAgain)
+const Modal = connect(mapStateToProps, mapDispatchToProps)(PlayAgain)
 
 export default Modal;
