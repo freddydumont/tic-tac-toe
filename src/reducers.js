@@ -83,11 +83,20 @@ function initialGameState(state = null, action) {
   }
 }
 
+function openModal(state = false, action) {
+  switch (action.type) {
+    case GAME_OVER:
+      return true;
+    default:
+      return state;
+  }
+}
+
 // https://stackoverflow.com/questions/35622588/
 // how-to-reset-the-state-of-a-redux-store
 
 // combine top-level reducers
-const appReducer = combineReducers({ data, isPlayerTurn, initialGameState });
+const appReducer = combineReducers({ data, isPlayerTurn, initialGameState, openModal });
 // write a new rootReducer wrapping appReducer
 const rootReducer = (state, action) => {
   if (action.type === RESET_STATE) {

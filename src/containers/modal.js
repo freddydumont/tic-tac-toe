@@ -4,7 +4,8 @@ import PlayAgain from '../components/play_again';
 // get state from store and pass it to component
 const mapStateToProps = state => {
   return {
-    status: state.data.status
+    status: state.data.status,
+    openModal: state.openModal
   }
 }
 

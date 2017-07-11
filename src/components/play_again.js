@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactModal from 'react-modal';
 
-const PlayAgain = ({ status }) => {
+const PlayAgain = ({ status, openModal }) => {
   // save status as boolean
   this.gameStatus = status === 'win' ? true : false;
 
   return (
     <ReactModal
-      isOpen={true}
+      isOpen={openModal}
       className="content"
       overlayClassName="overlay"
       contentLabel={"Play Again"}>

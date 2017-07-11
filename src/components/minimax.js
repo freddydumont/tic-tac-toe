@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Typed from 'typed.js';
 import evilBot from '../images/evil-bot.svg';
+import { endGame } from '../actions';
 
 class Minimax extends Component {
   constructor(props) {
@@ -15,15 +16,24 @@ class Minimax extends Component {
     this.startingStrings = ["Tic Tac Toe is my jam.", "Beating humans is my thing.", "Warning!^200 I am good at this."]
 
     this.errorString = ["I AM ERROR"];
+
+    this.typeStrings = this.typeStrings.bind(this);
   }
 
-  typeStrings(str, length) {
+  typeStrings(str, length, complete = false) {
     let arr = [str[Math.floor(Math.random() * length)]]
     // eslint-disable-next-line
     let typed = new Typed(".message", {
       strings: arr,
       typeSpeed: 40,
-      showCursor: false
+      showCursor: false,
+      // when he finishes talking and status is either win or draw,
+      // dispatch and action to show modal
+      onComplete: () => {
+        if (complete) {
+          this.props.onGameOver();
+        }
+      }
     });
   }
 
@@ -35,12 +45,12 @@ class Minimax extends Component {
     // if status is win type win strings
     if (this.props.status === "win") {
       document.querySelector(".message").innerHTML = '';
-      this.typeStrings(this.winStrings, this.winStrings.length);
+      this.typeStrings(this.winStrings, this.winStrings.length, true);
     }
     // if status is draw, type draw strings
     if (this.props.status === "draw") {
       document.querySelector(".message").innerHTML = '';
-      this.typeStrings(this.drawStrings, this.drawStrings.length);
+      this.typeStrings(this.drawStrings, this.drawStrings.length, true);
     }
   }
 
@@ -63,6 +73,12 @@ const mapStateToProps = state => {
   }
 }
 
-Minimax = connect(mapStateToProps)(Minimax);
+const mapDispatchToProps = dispatch => {
+  return {
+    onGameOver: () => dispatch(endGame())
+  }
+}
+
+Minimax = connect(mapStateToProps, mapDispatchToProps)(Minimax);
 
 export default Minimax;
