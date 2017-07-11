@@ -30,14 +30,19 @@ class PlayAgain extends Component {
         </h1>
         <h2>Play Again?</h2>
         <div className="choice">
-          {/* YES resets the game and NO sends user back to home page */}
-          <h3 onClick={() => this.props.resetGame(this.props.initialGameState)}
+          {/* YES resets the game and NO sends user back to home page
+            * component state is reset to both hidden, when user clicks yes or no */}
+          <h3 onClick={() => {
+            this.props.resetGame(this.props.initialGameState);
+            this.setState({ YesVisibility: "hide", NoVisibility: "hide" });
+          }}
             onMouseEnter={() => toggleVisibility('Yes')}
             onMouseLeave={() => toggleVisibility('Yes')}>
             <span className={this.state.YesVisibility}>&#9656;</span> YES
           </h3>
           <Link to="/">
-            <h3 onMouseEnter={() => toggleVisibility('No')}
+            <h3 onClick={() => this.setState({ YesVisibility: "hide", NoVisibility: "hide" })}
+              onMouseEnter={() => toggleVisibility('No')}
               onMouseLeave={() => toggleVisibility('No')}>
               <span className={this.state.NoVisibility}>&#9656;</span> NO
             </h3>
