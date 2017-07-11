@@ -15,6 +15,7 @@ $border: 2px solid #a6b2c0;
 .minimax {
   align-self: flex-start;
   width: 90vw;
+  min-height: min-content;
   margin: 25px;
   display: flex;
   justify-content: flex-start;
@@ -51,7 +52,7 @@ $border: 2px solid #a6b2c0;
  ****************/
 .board {
   display: table;
-  margin: 25px;
+  margin-top: 25px;
   width: 300px;
   table-layout: fixed;
   user-select: none;
