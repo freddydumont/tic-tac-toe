@@ -40,7 +40,7 @@ class PlayAgain extends Component {
             onMouseLeave={() => toggleVisibility('Yes')}>
             <span className={this.state.YesVisibility}>&#9656;</span> YES
           </h3>
-          <Link to="/">
+          <Link to="/tic-tac-toe">
             <h3 onClick={() => this.setState({ YesVisibility: "hide", NoVisibility: "hide" })}
               onMouseEnter={() => toggleVisibility('No')}
               onMouseLeave={() => toggleVisibility('No')}>

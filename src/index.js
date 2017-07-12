@@ -18,8 +18,8 @@ ReactDOM.render(
   <Provider store={store}>
     <Router>
       <Switch>
-        <Route path="/game" component={Game} />
-        <Route path="/" component={App} />
+        <Route path="/tic-tac-toe/game" component={Game} />
+        <Route path="/tic-tac-toe" component={App} />
       </Switch>
     </Router>
   </Provider>

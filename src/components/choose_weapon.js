@@ -12,10 +12,10 @@ let ChooseWeapon = ({ dispatch }) => {
     <div className="choose-weapon">
       <h1>Choose your weapon.</h1>
       <div className="buttons-container">
-        <Link to="/game" onClick={() => dispatch(setPiece('x'))}>
+        <Link to="/tic-tac-toe/game" onClick={() => dispatch(setPiece('x'))}>
           <StartButton letter='X' />
         </Link>
-        <Link to="/game" onClick={() => dispatch(setPiece('o'))}>
+        <Link to="/tic-tac-toe/game" onClick={() => dispatch(setPiece('o'))}>
           <StartButton letter='O' />
         </Link>
       </div>
