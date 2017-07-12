@@ -34,17 +34,9 @@ $text-color: #a6b2c0;
   opacity: 1;
 }
 
-.example-appear {
-  opacity: 0.01;
-}
-
-.example-appear.example-appear-active {
-  opacity: 1;
-  transition: opacity .5s ease-in;
-}
-
-/*************************/
-
+/*****************
+ * GLOBAL STYLES
+ ****************/
 body {
   background-color: #282c34;
   font-family: 'Montserrat', sans-serif;
@@ -56,9 +48,8 @@ a {
   color: inherit;
 }
 
+// app wrapper
 .app {
-  // height: 90vh; pushes the image outside the top
-  // find another way to center content on big screens
   padding: 40px 0;
   text-align: center;
   // app layout
@@ -80,6 +71,7 @@ a {
   }
 }
 
+// typed message has a fixed min-height to avoid content pushing below
 .welcome-message {
   @include media(">720px") {
     min-height: 175px;

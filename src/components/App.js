@@ -17,7 +17,7 @@ class App extends Component {
     return (
       <div className="app">
         <img src={evilBot} alt={"Evil robot face"} height={150} width={150} />
-        {<WelcomeMessage />}
+        <WelcomeMessage />
         <ChooseWeapon />
       </div>
     );

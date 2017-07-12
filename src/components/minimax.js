@@ -11,7 +11,7 @@ class Minimax extends Component {
       "I am invincible!!!", "Child's play."];
 
     this.drawStrings = ["You are lucky...^200 for now.",
-      "Is this the best you can do?", "A temporary relief.^200 Your end is unavoidable."];
+      "You are slightly better than expected.", "A temporary relief.^200 Your end is unavoidable."];
 
     this.startingStrings = ["Tic Tac Toe is my jam.", "Beating humans is my thing.", "Warning!^200 I am good at this."]
 

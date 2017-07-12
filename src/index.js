@@ -13,8 +13,6 @@ import reducer from './reducers';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 let store = createStore(reducer, composeEnhancers(applyMiddleware(ReduxPromise)));
-// testing
-console.log("store after createStore is", store.getState());
 
 ReactDOM.render(
   <Provider store={store}>
