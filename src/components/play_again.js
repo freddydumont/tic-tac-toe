@@ -4,6 +4,13 @@ import { Link } from 'react-router-dom';
 
 class PlayAgain extends Component {
   state = { YesVisibility: "hide", NoVisibility: "hide" }
+
+  componentWillReceiveProps() {
+    // set initial state to avoid issues when onMouseLeave is triggered
+    // as the modal fades out
+    this.setState({ YesVisibility: "hide", NoVisibility: "hide" });
+  }
+
   render() {
     // toggle visibility of triangles before yes and no on hover
     const toggleVisibility = (btn) => {
@@ -32,17 +39,13 @@ class PlayAgain extends Component {
         <div className="choice">
           {/* YES resets the game and NO sends user back to home page
             * component state is reset to both hidden, when user clicks yes or no */}
-          <h3 onClick={() => {
-            this.props.resetGame(this.props.initialGameState);
-            this.setState({ YesVisibility: "hide", NoVisibility: "hide" });
-          }}
+          <h3 onClick={() => { this.props.resetGame(this.props.initialGameState); }}
             onMouseEnter={() => toggleVisibility('Yes')}
             onMouseLeave={() => toggleVisibility('Yes')}>
             <span className={this.state.YesVisibility}>&#9656;</span> YES
           </h3>
           <Link to="/tic-tac-toe">
-            <h3 onClick={() => this.setState({ YesVisibility: "hide", NoVisibility: "hide" })}
-              onMouseEnter={() => toggleVisibility('No')}
+            <h3 onMouseEnter={() => toggleVisibility('No')}
               onMouseLeave={() => toggleVisibility('No')}>
               <span className={this.state.NoVisibility}>&#9656;</span> NO
             </h3>
