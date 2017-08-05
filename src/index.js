@@ -10,7 +10,10 @@ import 'normalize.css';
 import App from './components/App';
 import Game from './components/game';
 import reducer from './reducers';
+// service worker
+import { unregister } from './registerServiceWorker'
 
+// redux
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 let store = createStore(reducer, composeEnhancers(applyMiddleware(ReduxPromise)));
 
@@ -24,3 +27,4 @@ ReactDOM.render(
     </Router>
   </Provider>
   , document.getElementById('root'));
+unregister();
