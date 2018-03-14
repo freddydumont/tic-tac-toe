@@ -1,4 +1,4 @@
-# Pomodoro Clock
+# Minimax's tic tac toe
 freeCodeCamp advanced front end development project.
 Made with React + Redux, and other packages from the React ecosystem.
 
